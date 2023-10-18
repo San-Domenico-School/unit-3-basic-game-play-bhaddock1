@@ -17,14 +17,14 @@ public class PlayerController : MonoBehaviour
     private GameObject projectile;      //initializes projectile
 
     private float speed;                //initializes speed
-    private float CenterToEdge;         //initializes centertoedge
+    private float centerToEdge;         //initializes centertoedge
     private float move;                 //initializes move
 
     //initializes speed and center to edge on start
     private void Start()
     {
-        speed = 3.0f;
-        CenterToEdge = 24f;
+        speed = 14.0f;
+        centerToEdge = 24f;
     }
 
     // Call on player movement each frame
@@ -37,14 +37,14 @@ public class PlayerController : MonoBehaviour
     private void PlayerMovement()
     {
         transform.Translate(Vector3.right * Time.deltaTime * speed * move);
-        if(Mathf.Abs(transform.position.x) > CenterToEdge)
+        if(Mathf.Abs(transform.position.x) > centerToEdge)
         {
-            float edge = CenterToEdge;
-            if(transform.position.x < 0)
+            float edge = centerToEdge;
+            if(transform.position.x < 0f)
             {
-                edge = -CenterToEdge;
+                edge = -centerToEdge;
             }
-            transform.position = new Vector3(CenterToEdge, transform.position.y, transform.position.z);
+            transform.position = new Vector3(edge, transform.position.y, transform.position.z);
         }
     }
 
