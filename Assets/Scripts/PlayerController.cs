@@ -2,15 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+/******************************************
+ * component of player, player controller
+ * moves player on input and prevents player from travelling out of bounds
+ * 
+ * Bryce Haddock
+ * October 13, 2023 version 1.0
+ * **************************************/
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject projectile;
+    private GameObject projectile;      //initializes projectile
 
-    private float speed;
-    private float CenterToEdge;
-    private float move;
-    // Start is called before the first frame update
+    private float speed;                //initializes speed
+    private float CenterToEdge;         //initializes centertoedge
+    private float move;                 //initializes move
+
+    //initializes speed and center to edge on start
     private void Start()
     {
         speed = 3.0f;
